@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title> Quacking the Duck </title>
+    <style>
+        .main {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1> Welcome to "Quacking the Duck!" </h1>
+        <p1> Click on the duck to honk it, and add to the tally </p1>
+        <img src="https://culverduck.com/wp-content/uploads/2020/11/duck-animate-1-500x500.png">
+        <button id="increment-counter" type="button" onclick="incrementerJavascript()">Increment Counter</button>
+        <div id="counter"></div>
+    </div>
+
+    <script src="jquery-3.6.3.min.js" type="text/javascript"></script>
+    <script>
+        function incrementerJavascript() {
+            $.ajax({
+                url: "increment-counter.php",
+                success: function(result)
+                {
+                    $("#counter").append(result);
+                }
+            });
+        };
+    </script>
+</body>
+</html>
